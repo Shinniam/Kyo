@@ -1,0 +1,6 @@
+{
+  "name": "Kimutichan",
+  "scripts": {
+    "postdeploy": "npm run start"
+  }
+}
