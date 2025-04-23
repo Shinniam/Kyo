@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>prox</title>
+  <style>
+    body{font-family:sans-serif;text-align:center;padding-top:80px}
+    input{width:60%;padding:12px;font-size:16px}
+    button{padding:12px 24px;font-size:16px;margin-left:8px}
+  </style>
+</head>
+<body>
+  <h1>prox</h1>
+  <form id="f">
+    <input id="u" placeholder="https://example.com" required>
+    <button>Go</button>
+  </form>
+  <p><small>
+    <a href="/bare/">bare proxy</a> |
+    <a href="/proxy/">文字化けプロキシ</a> |
+    <code>?url=</code><a href="/puppeteer?url=https://tracker.gg">JSプロキシ</a>
+  </small></p>
+  <script>
+    document.getElementById('f').addEventListener('submit',e=>{
+      e.preventDefault();
+      const url=document.getElementById('u').value;
+      location.href = '/proxy/' + url.replace(/^https?:\/\//,'');
+    });
+  </script>
+</body>
+</html>
